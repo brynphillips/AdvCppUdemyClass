@@ -1,4 +1,5 @@
 #include <iostream>
+#include <exception>
 
 using namespace std;
 
@@ -24,19 +25,35 @@ using namespace std;
 //}
 
 //      ****Lesson 2****
-class CanGoWrong {
-public:
-    CanGoWrong() {
-        char *pMemory = new char[999999999999999];
-        delete[] pMemory;
-    }
+//class CanGoWrong {
+//public:
+//    CanGoWrong() {
+//        char *pMemory = new char[999999999999999];
+//        delete[] pMemory;
+//    }
+//
+//};
 
+//      ****Lesson 3****
+class MyException: public exception{
+public:
+    virtual const char* what() const throw() {
+        return "Something bad happened!";
+    }
+};
+
+class Test {
+public:
+    void goesWrong() {
+        throw MyException();
+    }
 };
 
 
 int main() {
 
 //    ***Lesson 1***
+//
 //    std::cout << "Hello, World!" << std::endl;
 //
 //    try {
@@ -55,16 +72,25 @@ int main() {
 //    cout << "Still running" << endl;
 
 //    ***Lesson 2***
+//
+//    try {
+//        CanGoWrong wrong;
+//    }
+//    catch (bad_alloc &e) {
+//        cout << "Caught excpetion: " <<  e.what() << endl;
+//    }
+//
+//    cout << "Still running";
 
-    try {
-        CanGoWrong wrong;
-    }
-    catch (bad_alloc &e) {
-        cout << "Caught excpetion: " <<  e.what() << endl;
-    }
-
-    cout << "Still running";
-
+//      ****Lesson 3****
+//
+//    Test test;
+//    try {
+//        test.goesWrong();
+//    }
+//    catch(MyException &e) {
+//        cout << e.what() << endl;
+//    }
 
     return 0;
 }
