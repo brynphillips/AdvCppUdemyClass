@@ -92,5 +92,6 @@ int main() {
 //        cout << e.what() << endl;
 //    }
 
+    cout << "Hello!";
     return 0;
 }
