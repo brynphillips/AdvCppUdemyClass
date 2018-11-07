@@ -9,7 +9,9 @@ int main() {
     std::cout << "Second change" << std::endl;
 
 
-    cout << "This is going to be change numbber 3";
+    cout << "This is going to be change number 3";
+    cout << "This might be different.";
+
 
 
     return 0;
