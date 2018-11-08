@@ -1,5 +1,6 @@
 #include <iostream>
 #include <exception>
+#include <fstream>
 
 using namespace std;
 
@@ -35,32 +36,34 @@ using namespace std;
 //};
 
 //      ****Lesson 3****
-class MyException: public exception{
-public:
-    virtual const char* what() const throw() {
-        return "Something bad happened!";
-    }
-};
+//class MyException: public exception{
+//public:
+//    virtual const char* what() const throw() {
+//        return "Something bad happened!";
+//    }
+//};
+//
+//class Test {
+//public:
+//    void goesWrong() {
+//        throw MyException();
+//    }
+//};
+//
+//void goesWrong() {
+//    bool error1Detected = false;
+//    bool error2Detected = true;
+//
+//    if (error1Detected) {
+//        throw bad_alloc();
+//    }
+//
+//    if (error2Detected) {
+//        throw exception();
+//    }
+//}
 
-class Test {
-public:
-    void goesWrong() {
-        throw MyException();
-    }
-};
 
-void goesWrong() {
-    bool error1Detected = false;
-    bool error2Detected = true;
-
-    if (error1Detected) {
-        throw bad_alloc();
-    }
-
-    if (error2Detected) {
-        throw exception();
-    }
-}
 
 
 int main() {
@@ -116,6 +119,22 @@ int main() {
 //    catch (exception &e) {
 //        cout << "Catching exception: " << e.what() << endl;
 //    }
+
+    ofstream outFile;
+
+    string outputFileName = "text.txt";
+    outFile.open(outputFileName);
+    if(outFile.is_open()) {
+        outFile << "Hello there" << endl;
+        outFile << 123 << endl;
+        outFile.close();
+    }else {
+        cout << "Could not create file: " << outputFileName << endl;
+    }
+
+
+
+
 
 
 
