@@ -49,6 +49,19 @@ public:
     }
 };
 
+void goesWrong() {
+    bool error1Detected = false;
+    bool error2Detected = true;
+
+    if (error1Detected) {
+        throw bad_alloc();
+    }
+
+    if (error2Detected) {
+        throw exception();
+    }
+}
+
 
 int main() {
 
@@ -83,7 +96,7 @@ int main() {
 //    cout << "Still running";
 
 //      ****Lesson 3****
-//
+
 //    Test test;
 //    try {
 //        test.goesWrong();
@@ -92,6 +105,19 @@ int main() {
 //        cout << e.what() << endl;
 //    }
 
-    cout << "Hello!";
+//    cout << "Hello!";
+
+//    try {
+//        goesWrong();
+//    }
+//    catch (bad_alloc &e) {
+//        cout << "Catching bad_alloc: " << e.what() << endl;
+//    }
+//    catch (exception &e) {
+//        cout << "Catching exception: " << e.what() << endl;
+//    }
+
+
+
     return 0;
 }
