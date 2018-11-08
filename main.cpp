@@ -125,16 +125,29 @@ int main() {
     string outputFileName = "text.txt";
     outFile.open(outputFileName);
     if(outFile.is_open()) {
-        outFile << "Hello there" << endl;
-        outFile << 123 << endl;
+        for (int i = 0; i < 10; ++i) {
+
+            outFile << "This is line " << i+1 << "." << endl;
+        }
         outFile.close();
     }else {
         cout << "Could not create file: " << outputFileName << endl;
     }
 
+    string inFileName = "text.txt";
+    ifstream inFile;
 
-
-
+    inFile.open(inFileName);
+    if(inFile.is_open()){
+        string line;
+        while(inFile) {
+            getline(inFile, line);
+            cout << line << endl;
+        }
+        inFile.close();
+    } else {
+        cout << "Cannot open file: " << inFileName << endl;
+    }
 
 
 
