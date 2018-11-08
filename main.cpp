@@ -180,7 +180,7 @@ int main() {
 //    }
 //    input.close();
     cout << sizeof(Person) << endl;
-    int I = 0; //thius needs work
+    int I = 0; //this needs work, This might work
 
 
     return 0;
