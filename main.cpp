@@ -63,6 +63,15 @@ using namespace std;
 //    }
 //}
 
+#pragma pack(push, 1)
+struct Person {
+    char name[50];
+    int age;
+    double weight;
+
+};
+#pragma pack(pop)
+
 
 
 
@@ -120,35 +129,57 @@ int main() {
 //        cout << "Catching exception: " << e.what() << endl;
 //    }
 
-    ofstream outFile;
-
-    string outputFileName = "text.txt";
-    outFile.open(outputFileName);
-    if(outFile.is_open()) {
-        for (int i = 0; i < 10; ++i) {
-
-            outFile << "This is line " << i+1 << "." << endl;
-        }
-        outFile.close();
-    }else {
-        cout << "Could not create file: " << outputFileName << endl;
-    }
-
-    string inFileName = "text.txt";
-    ifstream inFile;
-
-    inFile.open(inFileName);
-    if(inFile.is_open()){
-        string line;
-        while(inFile) {
-            getline(inFile, line);
-            cout << line << endl;
-        }
-        inFile.close();
-    } else {
-        cout << "Cannot open file: " << inFileName << endl;
-    }
-
+//    ofstream outFile;
+//
+//    string outputFileName = "text.txt";
+//    outFile.open(outputFileName);
+//    if(outFile.is_open()) {
+//        for (int i = 0; i < 10; ++i) {
+//
+//            outFile << "This is line " << i+1 << "." << endl;
+//        }
+//        outFile.close();
+//    }else {
+//        cout << "Could not create file: " << outputFileName << endl;
+//    }
+//
+//    string inFileName = "text.txt";
+//    ifstream inFile;
+//
+//    inFile.open(inFileName);
+//    if(inFile.is_open()){
+//        string line;
+//        while(inFile) {
+//            getline(inFile, line);
+//            cout << line << endl;
+//        }
+//        inFile.close();
+//    } else {
+//        cout << "Cannot open file: " << inFileName << endl;
+//    }
+//    string filename = "stats.txt";
+//    ifstream input;
+//
+//    input.open(filename);
+//
+//    if (!input.is_open()) {
+//        return 1;
+//    }
+//
+//    while (input) {
+//        string line;
+//        getline(input, line, ':');
+//        int population;
+//        input >> population;
+//
+//        input.get();
+//        input >> ws;
+//        cout << line << " -- " << population << endl;
+//
+//
+//    }
+//    input.close();
+    cout << sizeof(Person) << endl;
 
 
     return 0;
