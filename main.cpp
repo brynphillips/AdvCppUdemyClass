@@ -180,6 +180,7 @@ int main() {
 //    }
 //    input.close();
     cout << sizeof(Person) << endl;
+    int I;
 
 
     return 0;
