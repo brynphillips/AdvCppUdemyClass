@@ -2,6 +2,7 @@
 #include <exception>
 #include <fstream>
 #include <vector>
+#include <list>
 
 using namespace std;
 
@@ -213,19 +214,54 @@ int main() {
 //    strings.emplace_back("one");
 //    strings.emplace_back("two");
 //    strings.emplace_back("three");
-////    cout << strings[1] << endl;
-////    cout << strings.size() << endl;
-//
-////    for (int i = 0; i < strings.size(); ++i) {
-////        cout << strings[i] << endl;
-////    }
-////    for(vector<string>::iterator it = strings.begin(); it != strings.end(); it++) {
-////        cout << *it << endl;
-////    }
+//    cout << strings[1] << endl;
+//    cout << strings.size() << endl;
+
+//    for (int i = 0; i < strings.size(); ++i) {
+//        cout << strings[i] << endl;
+//    }
+//    for(vector<string>::iterator it = strings.begin(); it != strings.end(); it++) {
+//        cout << *it << endl;
+//    }
 //    for(auto &e: strings) {
 //        cout << e << endl;
 //    }
+//    vector<double> numbers(0);
+//
+//    cout << "Size: " << numbers.size() << endl;
+//
+//    int capacity = numbers.capacity();
+//    cout << "Capacity: " << capacity << endl;
+//    for (int i = 0; i < 10000; ++i) {
+//        if(numbers.capacity() != capacity) {
+//            capacity = numbers.capacity();
+//            cout << "Capacity: " << capacity << endl;
+//        }
+//        numbers.emplace_back(i);
+//        cout << numbers[i] << endl;
+//    }
+//    numbers.reserve(1000);
+//
+//    cout << "Size: " << numbers.size() << endl;
+//    cout << "Capacity: " << numbers.capacity() << endl;
+//    return 0;
 
+//    vector< vector<int> >grid(3, vector<int>(4, 7));
+//    grid[1].emplace_back(8);
+//    for (auto &row : grid) {
+//        for (int &col : row) {
+//            cout << col << flush;
+//        }
+//        cout << endl;
+//    }
 
-    return 0;
+    list<int> numbers;
+
+    numbers.push_back(1);
+    numbers.push_back(2);
+    numbers.push_back(3);
+
+    for (auto nums: numbers) {
+        cout << nums;
+    }
 }
