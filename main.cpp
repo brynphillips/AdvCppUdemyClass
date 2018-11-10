@@ -1,6 +1,7 @@
 #include <iostream>
 #include <exception>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -181,32 +182,50 @@ int main() {
 //    input.close();
 //    cout << sizeof(Person) << endl;
 
-    Person someone = {"Frodo", 220, 0.8};
-    string fileName = "test.bin";
+//    Person someone = {"Frodo", 220, 0.8};
+//    string fileName = "test.bin";
+//
+//    //write binary file////////////
+//    ofstream outputFile;
+//    outputFile.open(fileName, ios::binary);
+//    if (outputFile.is_open()) {
+//        outputFile.write(reinterpret_cast<char *>(&someone), sizeof(Person));
+//        outputFile.close();
+//    } else {
+//        cout << "Could not create file " + fileName;
+//    }
+//
+//    //read binary file//////////
+//
+//    Person someoneElse = {};
+//    ifstream inputFile;
+//    inputFile.open(fileName, ios::binary);
+//    if (inputFile.is_open()) {
+//        inputFile.read(reinterpret_cast<char *>(&someoneElse), sizeof(Person));
+//        inputFile.close();
+//    } else {
+//        cout << "Could not read file " + fileName;
+//    }
+//
+//    cout << someoneElse.name << ", " << someoneElse.age << ", " << someoneElse.height << endl;
 
-    //write binary file////////////
-    ofstream outputFile;
-    outputFile.open(fileName, ios::binary);
-    if (outputFile.is_open()) {
-        outputFile.write(reinterpret_cast<char *>(&someone), sizeof(Person));
-        outputFile.close();
-    } else {
-        cout << "Could not create file " + fileName;
-    }
+//    vector<string> strings;
+//    strings.emplace_back("one");
+//    strings.emplace_back("two");
+//    strings.emplace_back("three");
+////    cout << strings[1] << endl;
+////    cout << strings.size() << endl;
+//
+////    for (int i = 0; i < strings.size(); ++i) {
+////        cout << strings[i] << endl;
+////    }
+////    for(vector<string>::iterator it = strings.begin(); it != strings.end(); it++) {
+////        cout << *it << endl;
+////    }
+//    for(auto &e: strings) {
+//        cout << e << endl;
+//    }
 
-    //read binary file//////////
-
-    Person someoneElse = {};
-    ifstream inputFile;
-    inputFile.open(fileName, ios::binary);
-    if (inputFile.is_open()) {
-        inputFile.read(reinterpret_cast<char *>(&someoneElse), sizeof(Person));
-        inputFile.close();
-    } else {
-        cout << "Could not read file " + fileName;
-    }
-
-    cout << someoneElse.name << ", " << someoneElse.age << ", " << someoneElse.height << endl;
 
     return 0;
 }
