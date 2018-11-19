@@ -246,14 +246,14 @@ int main() {
 //    cout << "Capacity: " << numbers.capacity() << endl;
 //    return 0;
 
-//    vector< vector<int> >grid(3, vector<int>(4, 7));
-//    grid[1].emplace_back(8);
-//    for (auto &row : grid) {
-//        for (int &col : row) {
-//            cout << col << flush;
-//        }
-//        cout << endl;
-//    }
+    vector< vector<int> >grid(3, vector<int>(4, 7));
+    grid[1].emplace_back(8);
+    for (auto &row : grid) {
+        for (int &col : row) {
+            cout << col << flush;
+        }
+        cout << endl;
+    }
 
     list<int> numbers;
 
