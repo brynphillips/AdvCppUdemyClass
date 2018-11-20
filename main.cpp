@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <list>
+#include <map>
 
 using namespace std;
 
@@ -74,11 +75,18 @@ struct Person {
 };
 #pragma pack(pop)
 
+void timesTable(int input) {
+    for(int i = 1; i <= input; ++i) {
+        for (int j = 1; j <= input; ++j) {
+            cout << i*j <<  " ";
+        }
+        cout << endl;
+    }
+}
 
 
 
 int main() {
-
 //    ***Lesson 1***
 //
 //    std::cout << "Hello, World!" << std::endl;
@@ -246,22 +254,60 @@ int main() {
 //    cout << "Capacity: " << numbers.capacity() << endl;
 //    return 0;
 
-    vector< vector<int> >grid(3, vector<int>(4, 7));
-    grid[1].emplace_back(8);
+    vector<vector<int> > grid(3, vector<int>(4, 7));
+    grid[2].emplace_back(8);
     for (auto &row : grid) {
         for (int &col : row) {
-            cout << col << flush;
+//            cout << col << flush;
         }
-        cout << endl;
+//        cout << endl;
     }
 
+    // **** Lesson 15 ****
     list<int> numbers;
 
     numbers.push_back(1);
     numbers.push_back(2);
     numbers.push_back(3);
+    numbers.push_front(2);
 
-    for (auto nums: numbers) {
-        cout << nums;
+//    auto it = numbers.begin();
+//    cout << "Element: " << *it << endl;
+//
+//    numbers.erase(it);
+//
+//    for (auto nums: numbers) {
+//        cout << nums << endl;
+//    }
+
+
+// **** Lesson 16 **** //Maps
+    map<string, int> ages;
+
+    ages["Mike"] = 40;
+    ages["Raj"] = 20;
+    ages["Vicky"] = 30;
+
+    if(ages.find("1") != ages.end()) {
+        cout << "Found Vicky!" << endl;
+    } else {
+        cout << "Key not found!" << endl;
     }
+    for (auto i: ages) {
+        cout << i.first << ": " << i.second << endl;
+    }
+
+    ages.insert(make_pair("John", 22));
+
+    for(auto i : ages) {
+        cout << i.first << ": " << i.second << endl;
+    }
+
+// **** Lesson 17 ****
+// **** Lesson 18 ****
+// **** Lesson 19 ****
+// **** Lesson 20 ****
+// **** Lesson 21 ****
+// **** Lesson 22 ****
+
 }
