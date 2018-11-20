@@ -1,3 +1,5 @@
+#include <utility>
+
 #include <iostream>
 #include <exception>
 #include <fstream>
@@ -83,6 +85,27 @@ void timesTable(int input) {
         cout << endl;
     }
 }
+
+class Person2 {
+private:
+    string name;
+    int age;
+public:
+    Person2(): name(""), age(0){};
+    Person2 (string name, int age) :
+        name(std::move(name)), age(age) {};
+
+    Person2(const Person2 &other) {
+        cout << "Copy constructor running: " << endl;
+        name = other.name;
+        age = other.age;
+    }
+
+    void print() {
+    cout << name << ": " << age << endl;
+    }
+
+};
 
 
 
@@ -282,28 +305,42 @@ int main() {
 
 
 // **** Lesson 16 **** //Maps
-    map<string, int> ages;
+//    map<string, int> ages;
+//
+//    ages["Mike"] = 40;
+//    ages["Raj"] = 20;
+//    ages["Vicky"] = 30;
+//
+//    if(ages.find("1") != ages.end()) {
+//        cout << "Found Vicky!" << endl;
+//    } else {
+//        cout << "Key not found!" << endl;
+//    }
+//    for (auto i: ages) {
+//        cout << i.first << ": " << i.second << endl;
+//    }
+//
+//    ages.insert(make_pair("John", 22));
+//
+//    for(auto i : ages) {
+//        cout << i.first << ": " << i.second << endl;
+//    }
 
-    ages["Mike"] = 40;
-    ages["Raj"] = 20;
-    ages["Vicky"] = 30;
+// **** Lesson 17 **** //Custom Objects as Map Values
+    map<int, Person2> people;
 
-    if(ages.find("1") != ages.end()) {
-        cout << "Found Vicky!" << endl;
-    } else {
-        cout << "Key not found!" << endl;
+    people[0] = Person2("Mike", 40);
+    people[1] = Person2("Vicky", 30);
+    people[2] = Person2("Raj", 20);
+
+    people.insert(make_pair(50, Person2("Bob", 24)));
+
+    for (auto i : people) {
+        cout << i.first << ": " << flush;
+        i.second.print();
     }
-    for (auto i: ages) {
-        cout << i.first << ": " << i.second << endl;
-    }
 
-    ages.insert(make_pair("John", 22));
 
-    for(auto i : ages) {
-        cout << i.first << ": " << i.second << endl;
-    }
-
-// **** Lesson 17 ****
 // **** Lesson 18 ****
 // **** Lesson 19 ****
 // **** Lesson 20 ****
